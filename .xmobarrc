@@ -1,0 +1,12 @@
+Config { position = TopSize L 90 32
+       , commands = [ Run Date "%a %b %_d %Y * %H:%M:%S" "date" 10
+                    , Run Cpu ["-t", "  <total>%"] 10
+                    , Run Battery ["-t", "<acstatus>  <left>% / <timeleft>", "--", "-O", "", "-i", "", "-o", ""] 60
+                    , Run ThermalZone 0 [] 30
+                    , Run StdinReader
+                    , Run Com "get-volume" [] "vol" 20
+                    ]
+       -- , bgColor = "#223333"
+       , font = "xft:Source Sans Pro:style=semibold:size=9,Font Awesome 5 Free:style=solid:size=8,Font Awesome 5 Brands:size=8"
+       , template = "     %StdinReader% }{ <fc=#ff9c00>  %vol%</fc> - <fc=#ff9c00><action=`gnome-terminal -e htop`>%cpu% @ %thermal0%</action></fc> - <fc=#ff9c00>%battery%</fc> - <fc=#ff9c00>%date%</fc>      "
+       }

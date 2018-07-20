@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Make sure prerequisites are installed.
+for app in fish wget trayer nm-applet; do
+	if ! which "$app"; then
+		echo "Please install $app first."
+	fi
+done
+
+# Use fish.
+chsh -s /usr/bin/fish
+
+# Install fundle.
+mkdir -p ~/.config/fish/functions
+wget https://git.io/fundle -O ~/.config/fish/functions/fundle.fish
+
+# Install VS Code extensions
+if which code; then
+	for extension in EditorConfig.EditorConfig MaxfieldWalker.vscode-color-theme-spirited-away PeterJausovec.vscode-docker abusaidm.html-snippets akamud.vscode-theme-onedark alanz.vscode-hie-server CoenraadS.bracket-pair-colorizer dbaeumer.vscode-eslint DotJoshJohnson.xml eamodio.gitlens eg2.tslint eriklynd.json-tools fabianlauer.vs-code-xml-format humao.rest-client johnpapa.Angular2 justusadam.language-haskell minhthai.vscode-todo-parser ms-python.python ms-vsliveshare.vsliveshare naumovs.color-highlight npxms.hide-gitignored robinbentley.sass-indented wayou.vscode-todo-highlight wholroyd.jinja; do
+		code --install-extension "$extension"
+	done
+else
+	echo 'VS Code not found, not installing VS Code extensions.'
+fi
+
