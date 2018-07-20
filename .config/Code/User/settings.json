@@ -1,0 +1,65 @@
+{
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontSize": 11,
+    "editor.fontLigatures": true,
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 3,
+    "workbench.colorCustomizations": {
+//        "editorWhitespace.foreground": "#282c34"
+        "editorWhitespace.foreground": "#151515"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.vagrant": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/.stack-work": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorTheme": "Spirited Away",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "git.autofetch": false,
+    "window.zoomLevel": 0,
+    "extensions.ignoreRecommendations": true,
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+//            "#84bcb7",
+//            "#dbbfaa",
+//            "#aeac9b",
+            "#d39e70",
+//            "#55787d",
+            "#6e9da3",
+            "#dbbfaa"
+//            "#521c20"
+//            "#f9545f"
+        ],
+        "Red"
+    ],
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+    "gitlens.keymap": "chorded",
+    "terraform.format": {
+        "enable": false
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "languageServerHaskell.useHieWrapper": true
+}
