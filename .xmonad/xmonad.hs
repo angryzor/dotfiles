@@ -79,6 +79,7 @@ myConfig = def
   , layoutHook = spacingWithEdge 8 $ layoutHook def ||| OneBig (4/5) (4/5) ||| Grid ||| gridIM (1 % 7) imWindowId
   -- , layoutHook = layoutHook def ||| OneBig (4/5) (4/5) ||| Grid ||| gridIM (1 % 7) imWindowId
   , workspaces = map tagFor [1..9 :: Int]
+  , terminal = "gnome-terminal"
   }
   `removeKeys`
   [ (modSuper, xK_t)

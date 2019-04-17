@@ -1,18 +1,29 @@
 #!/bin/sh
 
 # Make sure prerequisites are installed.
-for app in fish wget trayer nm-applet; do
+for app in trayer nm-applet; do
 	if ! which "$app"; then
-		echo "Please install $app first."
+		echo "$app is not installed! xmobar may not work correctly!"
 	fi
 done
 
-# Use fish.
-chsh -s /usr/bin/fish
+# Update fonts
+if which fc-cache; then
+	fc-cache -f
+else
+	echo 'fontconfig not found, cannot update font cache.'
+fi
 
-# Install fundle.
-mkdir -p ~/.config/fish/functions
-wget https://git.io/fundle -O ~/.config/fish/functions/fundle.fish
+# Use fish.
+if which fish && which wget; then
+	chsh -s /usr/bin/fish
+
+	# Install fundle.
+	mkdir -p ~/.config/fish/functions
+	wget https://git.io/fundle -O ~/.config/fish/functions/fundle.fish
+else
+	echo 'Fish or wget not found, not installing fish as default terminal.'
+fi
 
 # Install VS Code extensions
 if which code; then
